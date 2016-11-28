@@ -1,0 +1,79 @@
+@import "common/variables.scss";
+@import "common/layout.scss";
+@import "common/extends.scss";
+@import "common/mixins.scss";
+@import "common/table.scss";
+*{
+	@include reset();
+}
+
+.box{
+	//Mixins
+	@include border-radius();
+	float:$left;
+	width: $container;
+	background:$color;
+	height:100px;
+}
+
+//Extend/Inheritance
+.success {
+  @extend .message;
+  border-color: $green;
+  color:$green;
+}
+.clearfix{
+	clear:both
+}
+header{
+	padding:20px;
+	font-family:$font-Slabo;
+	background:$yellow;
+	color:$white;
+	&:hover{
+		background:red;
+	}
+}
+
+.media{
+
+	overflow:auto;
+	.item{
+		overflow:auto;
+		@includ clearfix();
+		margin:10px 0;
+		border-bottom:1px dotted #cfcfcf
+	}
+	h2{
+		color:$colorCream;
+		font-family:$font-Slabo;
+	}
+	.img,.rightContent{
+		float:$left;
+		width:8%;
+	}
+	.rightContent{
+		width: 92%;
+
+		h3{
+			color: $colorPurple;
+			font-family:$font-Slabo;
+		}
+		p{
+			font-family:$font-Slabo;
+			font-size:16px;
+		}
+	}
+
+}
+.arrow{
+	@include arrow(right, 30);
+}
+
+$colors: red, green, blue, yellow, pink, purple;
+
+@for $item from 1 through length($colors){
+	h#{$item}{
+		color:nth($colors, $item);
+	}
+}

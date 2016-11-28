@@ -1,0 +1,49 @@
+@mixin reset(){
+	margin:0;
+	padding:0;
+}
+@mixin border-radius($radius:5px){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;	
+	 @extend .message;
+}
+@mixin clearfix{
+	&:before,
+	&:after{
+		content:'';
+		display:table;
+	}
+	&:after{
+		clear:both;
+	}
+}
+@mixin break($length){
+	@media(min-width: $length){
+		@content;
+	}
+}
+
+@mixin arrow($direction, $size){
+	width: 0px;
+	height: 0px;
+	
+	@if $direction == left {
+		@extend .borderleftright;
+		border-right: (2*$size)px solid magenta;
+	}
+	@if $direction == right {
+		@extend .borderleftright;
+		border-left: 2*$size+px solid magenta;
+	}
+	@if $direction == top {
+		@extend .bordertopbottom;
+		border-top: 20px solid magenta;
+	}
+	@if $direction == bottom {
+		@extend .bordertopbottom;
+		border-bottom: 20px solid magenta;
+	}
+}
+

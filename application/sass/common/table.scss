@@ -1,0 +1,25 @@
+.table{
+	font-size:16px;
+	test-align:left;
+	width:100%;
+	font-family:$font-Slabo;
+	display:none;
+	@include break(1024px){
+		display:block;
+	}
+
+	> thead,
+	> tbody{
+		> tr{
+			> th,
+			> td{
+				padding:10px;
+				border-bottom:1px solid $colorCream
+			}
+		}
+	}
+	>tr:nth-child(even){
+		background:$grey;
+	}
+		
+}

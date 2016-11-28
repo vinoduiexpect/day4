@@ -1,0 +1,13 @@
+.message{
+	border: 1px solid #ccc;
+	padding: 10px;
+	color: $grey;
+}
+.borderleftright{
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+}
+.bordertopbottom{
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+}
